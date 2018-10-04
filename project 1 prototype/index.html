@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <title>TimeLess</title>
+        <link rel="stylesheet" href="styles.css">
+        <link href="https://fonts.googleapis.com/css?family=Noto+Serif" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Catamaran" rel="stylesheet">
+        <style>
+            img{
+                display:block;
+                margin-left:auto;
+                margin-right:auto;
+                
+            }
+            .content{
+                text-align:center;
+                font-size:200%;
+            }
+            #smallwatch{
+                display:none;
+            }
+            @media screen and (max-width:480px){
+                #bigwatch{
+                    display:none;
+                    
+                }
+                #smallwatch{
+                    display:block;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div id="container">
+            <ul id="navigation">
+                <li><a href="index.html">Index</a></li>
+                <li><a href="proposal.html">Proposal</a></li>
+                <li><a href="project.html">Project</a></li>
+                <li><a href="documentation.html">Documentation</a></li>
+            </ul>
+            <div id= "title">
+            <h1>TimeLess</h1>
+            <h3>Will Walrond</h3>
+            </div>
+            <div class="content">
+                <img id = "bigwatch" src="images/the-melting-watch.jpg"> 
+                <img id="smallwatch" src="images/watchsmall.jpg">
+                <p>
+                    Travel through a ruined timeline and defy fate. Play as one of four outcasts and treck through the dying history of your world, fighting off zombies, robots, and other horrible monsters as you try and get the chance to remake the world in your own image.
+                </p>
+            </div>
+        </div>
+        
+    </body>
+
+</html>

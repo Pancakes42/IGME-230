@@ -1,0 +1,73 @@
+body{
+    background-color:limegreen;
+}
+#container{
+    padding: 50px 50px 0px 0px;
+    background-color:black;
+    color:white;
+    height:100vh;
+}
+.content{
+    padding:10px;
+    font-family: 'Noto Serif', serif;
+}
+.content p{
+    padding-left:50px;
+    padding-right:50px;
+}
+
+#navigation{
+    font-family: 'Catamaran', sans-serif;
+    margin-left:auto;
+    margin-top:auto;
+    padding-top:0;
+    width:auto;
+    white-space:nowrap;
+    overflow:hidden;
+}
+#navigation li{
+    display:inline;
+    list-style-type:none;
+}
+#navigation a{
+    padding:3px 10px;
+    margin:0% 5%;
+    font-size:150%;
+    float:left;
+    
+}
+#navigation a:link, #navigation a:visited{
+    color:white;
+    text-decoration:none;
+}
+#navigation a:hover{
+    color:black;
+    background-color:limegreen;
+    text-decoration:none;
+}
+#title{
+    text-align:center;
+    font-family: 'Catamaran', sans-serif;
+
+}
+#title h1{
+    width:auto;
+    font-size:200%;
+}
+#title h3{
+    width:auto;
+}
+@media screen and (max-width:480px){
+    #navigation li{
+                    display:block;
+                    float:left;
+                    font-size:75%;
+                }
+    #container{
+        height:100vh;
+        
+    }
+    .content{
+        font-size:75%;
+    }
+}
