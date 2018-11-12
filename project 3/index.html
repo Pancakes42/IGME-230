@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type= "text/css" href="resources/stylesheet.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <header>
+            William Walrond's Portfolio
+        </header>
+
+        <nav>
+            <ul class="nav nav-tabs">
+               <li class="nav-item"><a href="#title">About Me</a></li>
+               <li class="nav-item"><a href="#icons">Things I did</a></li>
+            </ul>
+        </nav>
+
+        <div id="title"class="row">
+            <div class="col-sm">
+                photo here
+                <p>
+                    <h1>William Walrond</h1> a Portfolio. <br> Unity Creative Dev
+                </p> 
+            </div>
+            
+        </div>
+
+        <div id="about me" class= "row">
+            <div class="col-sm">
+                <h2>About Me</h2>
+                <p>
+                    I am 20 years old, and a sophmore at Rochester Institute of Technology. I study Game Design and Development. I like to play fighting games competitevely, and like to make my own games.
+                </p>
+            </div>
+            <div class="col-sm">
+                    <p>
+                        Email Me!
+                    </p>
+                    <form action="resources/email.php" method="GET">
+                        Name: <input type="text" name="name"><br>
+                        Message:<input type="text" name="message"><br>
+                        <input type="submit">
+                    </form>
+            </div>
+            
+        </div>
+
+        <div id="icons" class="row">
+            
+            <div id="caveweb" class="col-lg">
+                <img id = "cavepic" src="resources/cavestorywebsite.png" alt="">
+                <h2>Cave Story Website</h2>
+            </div>
+            <div id="shmup" class="col-lg">
+                <img id="shmuppic" src="resources/plant_pic.png" alt="">
+                <h2>Shmup</h2>
+            </div>
+        </div>
+
+        <div id="caveinfo" class="row">
+            <div class="col-sm">
+                <img src="resources/cavestorywebsite.png" alt="">
+            </div>
+            <div class="col-lg">
+                <p>
+                    I built this website in my first year. I wanted to talk about one of my favority games, and the impact it had and continues to have on indie game history.
+                </p>
+            </div>
+        </div>
+
+        <div id="shmupinfo" class="row">
+            <div class="col-sm">
+                <img src="resources/plant_pic.png">
+            </div>
+            <div class="col-lg">
+                The game logic was provided for me, but the assets and animation are all made by me.
+            </div>
+        </div>
+
+        <footer>
+            <form method="get" action="resources/resume.pdf">
+                <button type="submit">Resume</button>
+            </form>
+        </footer>
+        
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,30 @@
+#cavepic{
+    width:50%;
+    height:auto;
+}
+#shmuppic{
+    width:70%;
+    height: auto;
+    
+}
+header{
+    display:none;
+    
+}
+body{
+    background-color:lightgreen;
+}
+.row{
+    background-color:whitesmoke;
+    margin-bottom:2%;
+}
+#caveinfo img{
+    width:75%;
+    height:auto;
+}
+#shmupinfo img{
+    width:75%;
+    height:auto;
+}
+
+
