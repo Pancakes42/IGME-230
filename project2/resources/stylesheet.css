@@ -1,0 +1,104 @@
+#seperator{
+    background-color:red;
+
+}
+.widgets{
+    float:right;
+    padding-left:5%;
+    padding-bottom:1%;
+}
+
+#logo{
+    float:left;
+}
+#seperator{
+    background-color:red;
+    padding:0%;
+    float:left;
+   
+    width:100%;
+    
+}
+#headerbox{
+    padding-top:2%;
+}
+.content{
+    float:left;
+    width:80%;
+    background-color:lightgrey;
+    min-height:100%;
+    margin-top:1%;
+}
+.sidebar{
+    float:right;
+    width:18%;
+    background-color:lightblue;
+    min-height:100%;
+    margin-top:1%;
+}
+.sidebar img{
+    height:auto;
+    width:50%;
+}
+html,body{
+    height:100%;
+}
+button{
+    float:right;
+    
+}
+#searchterm{
+    width:30%;
+}
+select{
+    float:left;
+    
+}
+ul{
+    list-style-type: none;
+}
+li{
+    margin-top:1%;
+    
+}
+#schedule li{
+    padding:1%;
+
+}
+#debug{
+    padding:1%;
+}
+#logo img{
+    height:auto;
+    width:50%;
+}
+.content img{
+    height:auto;
+    width:20%;
+    display:block;
+}
+.content li{
+    padding-top:1%;
+    display:block;
+    height:auto;
+    width:50%;
+}
+
+@media only screen and (max-width: 600px){
+    .sidebar{
+        display:none;
+    }
+    .content{
+        width:100%;
+        font-size:75%;
+    }
+    .content li{
+        padding-top:2%;
+    }
+    #searchterm{
+        width:100%;
+    }
+    #search{
+        float:left;
+    }
+}

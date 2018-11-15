@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Anime Finder</title>
+    <link rel = "stylesheet" type="text/css" href="resources/stylesheet.css">
+    <header name = "Access-Control-Allow-Origin" value = "*"></header>
+</head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script>
+    
+    window.onload = init;
+    
+    const SOURCE_URL="https://api.jikan.moe/v3/search/anime?q=";
+    let LOCALKEY = "WWalrondProj2LastSearch";
+    let url = SOURCE_URL;
+
+    let todayschedule;
+    function init(){
+		document.querySelector("#search").onclick = getData;
+        let lastsearch = localStorage.getItem(LOCALKEY);
+        if(lastsearch){
+            document.querySelector("input#searchterm").value = lastsearch;
+        }
+        
+        let date = new Date();
+        todayschedule = date.getDay();
+        let week = ["sunday","monday","tuesday","wednesday","thursday","friday","saturday"];
+        todayschedule = week[todayschedule];
+        let srl = "https://api.jikan.moe/v3/schedule/" + encodeURIComponent(todayschedule);
+        $.ajax({
+		  dataType: "json",
+		  url: srl,
+		  success: function(data) {
+              scheduleLoaded(data);
+          },
+          error: function(err) {
+              console.error(err);
+          }
+		});
+
+	}
+	
+    let sched = "";
+    function scheduleLoaded(obj){
+        
+        if(obj.error){
+			let msg = obj.error;
+			document.querySelector("#searchcont").innerHTML = `<p><i>Problem! <b>${msg}</b></i></p>`;
+			return; // Bail out
+		}
+        console.log("here");
+        sched = obj[todayschedule];
+        console.log(sched);
+        let side = document.querySelector("#schedule");
+        for(let i =0; i<sched.length;i++){
+            let link = document.createElement("a");
+            link.setAttribute("href",sched[i]["url"]);
+
+            let st = document.createElement("li");
+            let image = document.createElement("img");
+            image.setAttribute("src",sched[i]["image_url"]);
+            st.innerHTML = sched[i]["title"];
+            link.append(image);
+            link.append(document.createElement("br"));
+            link.append(st);
+            side.append(link);
+        }
+
+    }
+
+
+	let term = ""; // we declared `term` out here because we will need it later
+	function getData(){
+		
+		let rating = document.getElementById("ratings").value;
+        // let status = document.getElementById("status").value;
+        
+        if(rating != "default"){
+            rating = "&rated=" + rating;
+        }
+        else rating = "";
+
+        if(status != "default"){
+            status = "&status="+ status;
+        }
+        else status = "";
+
+		
+		term = document.querySelector("#searchterm").value;
+		localStorage.setItem(LOCALKEY,term);
+
+
+		// get rid of any leading and trailing spaces
+		term = term.trim();
+		// encode spaces and special characters
+		term = encodeURIComponent(term);
+		
+		
+		
+        if(term.length < 1){
+			document.querySelector("#debug").innerHTML = "<b>Enter a search term first!</b>";
+			return;
+        }
+		
+		document.querySelector("#debug").innerHTML = "<b>Searching...</b>";
+		url = url + term + rating + status;
+        $.ajax({
+		  dataType: "json",
+		  url: url,
+		  success: function(data) {
+              jsonLoaded(data);
+          },
+          error: function(err) {
+              console.error(err);
+          }
+		});
+        document.querySelector("#debug").innerHTML = "<b>Here are the results for " + term + ".</b>";
+
+		
+	}
+	
+	let temp;
+    
+    function jsonLoaded(obj){ //does stuff with loaded content
+        document.querySelector("#searchcont").innerHTML = "";
+        if(obj.error){
+			let msg = obj.error;
+			document.querySelector("#searchcont").innerHTML = `<p><i>Problem! <b>${msg}</b></i></p>`;
+			return; // Bail out
+		}
+
+        temp = obj["results"];
+        console.log(obj);
+        for(let i = 0; i < temp.length;i++){
+            let item = document.createElement("li");
+            let image = document.createElement("img");
+            let link = document.createElement("a");
+            link.setAttribute("href",temp[i]["url"])
+            image.setAttribute("src",temp[i]["image_url"]);
+            link.append(image);
+            link.append(document.createElement("br"));
+            link.append( temp[i]["title"]);
+            item.append(link);
+            
+            
+            document.querySelector("#searchcont").appendChild(item);
+        }
+        url = SOURCE_URL;
+    }
+</script>
+<body>
+    <div id="headerbox">
+    <div id="logo">
+        <img src="resources/logo.png" alt="">
+    </div>
+    <div class="widgets">
+            
+        <select id = "ratings" selected="default">
+            <option value="default">Sort By Ratings</option>
+            <option value="g">G</option>
+            <option value="pg">PG</option>
+            <option value="pg13">PG13</option>
+            <option value="r17">R17</option>
+            
+        </select>
+        <select id = "status" selected="default">
+            <option value = "default">Sort By Release Status</option>
+            <option value = "airing">Sort By Airing</option>
+            <option value = "completed">Sort By Completed</option>
+            <option value = "upcoming">Sort By Upcoming</option>
+        </select>
+        <input id="searchterm" type="text" size="20" maxlength="20" />
+
+        <button type="button" id="search" class="green">Search</button>
+        
+        
+    </div>
+
+    </div>
+    <div id="seperator">
+         &nbsp;
+    </div>
+    <div class="content">
+        <p id="debug"></p>
+        <ul id= "searchcont"></ul>
+    </div>
+    <div class="sidebar">
+        <p>
+            <b>Today's Schedule</b>
+        </p>
+        <ul id="schedule"></ul>
+    </div>
+    
+</body>
+</html>
