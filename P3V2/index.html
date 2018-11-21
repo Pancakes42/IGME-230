@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" type= "text/css" href="resources/stylesheet.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <title>Document</title>
+</head>
+<body>
+    <header class="container-fluid">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                    <a class="navbar-brand" href="#">Navbar</a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                      <span class="navbar-toggler-icon"></span>
+                    </button>
+                  
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                      <ul class="navbar-nav mr-auto">
+                        <li class="nav-item active">
+                          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="#">Link</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Dropdown
+                          </a>
+                          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="#">Action</a>
+                            <a class="dropdown-item" href="#">Another action</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#">Something else here</a>
+                          </div>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link disabled" href="#">Disabled</a>
+                        </li>
+                      </ul>
+                      <form class="form-inline my-2 my-lg-0">
+                        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                      </form>
+                    </div>
+                  </nav>
+    </header>
+    <div class="container">
+
+
+        <!-- <header>
+            William Walrond's Portfolio
+
+            
+        </header>
+ 
+        <nav>
+            <ul class="nav nav-pills">
+               <li class="nav-item"><a class = "nav-link active" href="#title">About Me</a></li>
+               <li class="nav-item"><a class = "nav-link" href="#icons">Things I did</a></li>
+            </ul>
+        </nav> -->
+
+        <div id="title"class="row">
+            <div class="col-sm">
+                photo here
+                <p>
+                    <h1>William Walrond</h1> a Portfolio. <br> Unity Creative Dev
+                </p> 
+            </div>
+            
+        </div>
+
+        <div id="about me" class= "row">
+            <div class="col-sm">
+                <h2>About Me</h2>
+                <p>
+                    I am 20 years old, and a sophmore at Rochester Institute of Technology. I study Game Design and Development. I like to play fighting games competitevely, and like to make my own games.
+                </p>
+            </div>
+            
+            
+        </div>
+
+        <div id="email" class="row">
+            <p>
+                Email Me!
+            </p>
+            <div id = "forms">
+                    <form action="resources/email.php" method="GET"><table>
+
+                        <tr>
+                            <td>Name:</td><td><input  id = "name" type="text" name="name"></td>
+                        </tr>
+                        <tr>
+                               <td>Message:</td> <td><textarea rows="4" cols="50"></textarea></td>
+                        </tr>
+                        
+                        <tr><td colspan="2" align="center"><input type="submit"></td></tr>
+                        </table>
+                    </form>
+
+            </div>
+            
+        </div>
+
+        <div id="icons" class="row">
+            
+            <div id="caveweb" class="col-lg">
+                <img id = "cavepic" src="resources/cavestorywebsite.png" alt="">
+                <h2>Cave Story Website</h2>
+            </div>
+            <div id="shmup" class="col-lg">
+                <img id="shmuppic" src="resources/plant_pic.png" alt="">
+                <h2>Shmup</h2>
+            </div>
+        </div>
+
+        <div id="caveinfo" class="row">
+            <div class="col-sm">
+                <img src="resources/cavestorywebsite.png" alt="">
+            </div>
+            <div class="col-lg">
+                <p>
+                    I built this website in my first year. I wanted to talk about one of my favority games, and the impact it had and continues to have on indie game history.
+                </p>
+            </div>
+        </div>
+
+        <div id="shmupinfo" class="row">
+            <div class="col-sm">
+                <img src="resources/plant_pic.png">
+            </div>
+            <div class="col-lg">
+                The game logic was provided for me, but the assets and animation are all made by me.
+            </div>
+        </div>
+
+        <footer>
+            <form method="get" action="resources/resume.pdf">
+                <button type="submit">Resume</button>
+            </form>
+        </footer>
+        
+
+    </div>
+</body>
+</html>
